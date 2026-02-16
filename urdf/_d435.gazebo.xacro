@@ -58,13 +58,9 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
             <stddev>0.007</stddev>
           </noise>
 
-          <depth_camera>
-            <output>custom_depths</output>
-          </depth_camera>
-
         </camera>
 
-        <camera name="${camera_name}depth">
+        <!-- <camera name="${camera_name}depth">
           <horizontal_fov>${85.2*deg_to_rad}</horizontal_fov>
           <image>
             <width>320</width>
@@ -72,29 +68,22 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
           </image>
           <clip>
             <near>0.1</near>
-            <far>100</far>
+            <far>1</far>
           </clip>
           <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
             <stddev>0.100</stddev>
           </noise>
-        </camera>
 
-        <point_cloud>
+        </camera> -->
+
+        <!-- <point_cloud>
           <topic>custom_name/points</topic>
           <sample_rate>2</sample_rate>
-        </point_cloud>
+        </point_cloud> -->
 
       </sensor>
-
-              <point_cloud>
-          <topic>custom_name/points</topic>
-          <sample_rate>2</sample_rate>
-        </point_cloud>
-
-        <plugin filename="libignition-gazebo-sensors-system.so"
-        name="ignition::gazebo::systems::Sensors"/>
 
     </gazebo>
   </xacro:macro>
