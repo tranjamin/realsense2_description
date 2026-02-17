@@ -27,18 +27,19 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
       <kd>1</kd>
       <!--<max_vel>0.01</max_vel>
       <min_depth>0</min_depth>-->
+
       <sensor name="custom_camera_rgbd" type="rgbd_camera">
         <always_on>1</always_on>
         <update_rate>30</update_rate>
         <visualize>1</visualize>
-        <topic>custom_topic/color</topic>
+        <topic>camera_sim</topic>
         <enable_metrics>1</enable_metrics>
         <plugin filename="libignition-gazebo-sensors-system.so"
         name="ignition::gazebo::systems::Sensors"/>
 
-        <camera name="$custom_camera/color">
+        <camera name="$d435_sim/color">
           <triggered>0</triggered>
-          <camera_info_topic>custom_camera/camera_info</camera_info_topic>
+          <camera_info_topic>camera_sim/camera_info</camera_info_topic>
           <horizontal_fov>${69.4*deg_to_rad}</horizontal_fov>
           <save enabled="true">
             <path>/ros2_ws/src</path>
@@ -59,30 +60,6 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
           </noise>
 
         </camera>
-
-        <!-- <camera name="${camera_name}depth">
-          <horizontal_fov>${85.2*deg_to_rad}</horizontal_fov>
-          <image>
-            <width>320</width>
-            <height>240</height>
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>1</far>
-          </clip>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.100</stddev>
-          </noise>
-
-        </camera> -->
-
-        <!-- <point_cloud>
-          <topic>custom_name/points</topic>
-          <sample_rate>2</sample_rate>
-        </point_cloud> -->
-
       </sensor>
 
     </gazebo>
