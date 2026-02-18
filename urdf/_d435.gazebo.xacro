@@ -53,11 +53,11 @@ This is the Gazebo URDF model for the Intel RealSense D435 camera
             <near>0.1</near>
             <far>2</far>
           </clip>
-          <noise>
+          <!-- <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
             <stddev>0.007</stddev>
-          </noise>
+          </noise> -->
 
         </camera>
       </sensor>
